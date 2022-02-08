@@ -1,8 +1,12 @@
-from cgitb import reset
-import os
-import sys
 from openpyxl import Workbook, load_workbook
+#Jesli nie istnieje plik excelowy to go tworzymy
+wb=Workbook()
+ws=wb.active
+ws.title="Data"
+
+wb.save(filename="mail_database.xlsx")
 #Otiweramy nasz plik i tworzymy uchwyt do niego
+
 workbook=load_workbook(filename="mail_database.xlsx")
 sheet = workbook.active
 sheet.title="Data"
